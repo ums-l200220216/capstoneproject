@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MathController;
 
 Route::get('/login', function () {
     return view('auth.login');
@@ -20,3 +21,5 @@ Route::get('/answer', function () {
 Route::get('/save-history', function () {
     return view('pages.savehistory');
 });
+
+Route::post('/solve-from-image', [MathController::class, 'solveFromImage']);
